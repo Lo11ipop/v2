@@ -1,14 +1,9 @@
-import psycopg2
-
-HOST = 'localhost'
-DBname = 'sec'
-User = 'alt'
-Password = '1234'
+from ..dao import db
 
 def row_ret_lists():
     con = None
     try:
-        con = psycopg2.connect("host = {0} dbname ={1} user={2} password={3}".format(HOST, DBname, User, Password))
+        con = db.getconn()
         cur = con.cursor()
         cur.execute("SELECT * FROM lists")
         rows = cur.fetchall()
@@ -21,7 +16,7 @@ def insert_exports(TypeReport, dateS, dateF):
     con = None
     param = 0
     try:
-        con = psycopg2.connect("host = {0} dbname ={1} user={2} password={3}".format(HOST, DBname, User, Password))
+        con = db.getconn()
         cur = con.cursor()
         cur.execute("INSERT INTO exports (type, from_date, to_date, started) VALUES ( '{0}', '{1}', '{2}', now() ) RETURNING id;".format(TypeReport, dateS, dateF))
         con.commit()
@@ -35,11 +30,10 @@ def insert_exports(TypeReport, dateS, dateF):
 def row_ret_exports():
     con = None
     try:
-        con = psycopg2.connect("host = {0} dbname ={1} user={2} password={3}".format(HOST, DBname, User, Password))
+        con = db.getconn()
         cur = con.cursor()
         cur.execute("SELECT * FROM exports")
         rows = cur.fetchall()
-        print(rows)
     finally:
         if con:
             con.close()

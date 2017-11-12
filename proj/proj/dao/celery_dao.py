@@ -1,16 +1,11 @@
-import psycopg2
-
-HOST = 'localhost'
-DBname = 'sec'
-User = 'alt'
-Password = '1234'
+from ..dao import db
 
 def get_last_exports(id):
     con = None
     try:
-        con = psycopg2.connect("host = {0} dbname ={1} user={2} password={3}".format(HOST, DBname, User, Password))
+        con = db.getconn()
         cur = con.cursor()
-        cur.execute("SELECT type, from_date, to_date FROM exports WHERE id = '{0}';".format(id[0]))
+        cur.execute("SELECT type, from_date, to_date FROM exports WHERE id = {0};".format(id[0]))
         param = cur.fetchall()
     finally:
         if con:
@@ -20,7 +15,7 @@ def get_last_exports(id):
 def get_lists_row(param, form):
     con = None
     try:
-        con = psycopg2.connect("host = {0} dbname ={1} user={2} password={3}".format(HOST, DBname, User, Password))
+        con = db.getconn()
         cur = con.cursor()
         if(form):
             cur.execute("SELECT Name, created, updated  FROM lists WHERE '{0}' <= created AND '{1}' >= created;".format(param[0][1], param[0][2]))
@@ -36,12 +31,11 @@ def get_lists_row(param, form):
 def update_exports(fname, id):
     con = None
     try:
-        con = psycopg2.connect("host = {0} dbname ={1} user={2} password={3}".format(HOST, DBname, User, Password))
+        con = db.getconn()
         cur = con.cursor()
-        print(id)
-        cur.execute("UPDATE exports SET path='{0}' WHERE id='{1}'".format(fname, id[0]))
+        cur.execute("UPDATE exports SET path='{0}' WHERE id= {1}".format(fname, id[0]))
         con.commit()
-        cur.execute("UPDATE exports SET finished=now() WHERE id='{0}'".format(id[0]))
+        cur.execute("UPDATE exports SET finished=now() WHERE id= {0}".format(id[0]))
         con.commit()
     finally:
         if con:
