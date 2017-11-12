@@ -9,7 +9,7 @@ def row_ret_lists():
         rows = cur.fetchall()
     finally:
         if con:
-            db.putconn(con)
+            db.putconn(con, None, True)
     return rows
 
 def insert_exports(TypeReport, dateS, dateF):
@@ -24,7 +24,7 @@ def insert_exports(TypeReport, dateS, dateF):
         param = myid[0]
     finally:
         if con:
-            db.putconn(con)
+            db.putconn(con, None, True)
     return param
 
 def row_ret_exports():
@@ -36,5 +36,5 @@ def row_ret_exports():
         rows = cur.fetchall()
     finally:
         if con:
-            db.putconn(con)
+            db.putconn(con, None, True)
     return rows

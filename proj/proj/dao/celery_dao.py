@@ -9,7 +9,7 @@ def get_last_exports(id):
         param = cur.fetchall()
     finally:
         if con:
-            db.putconn(con)
+            db.putconn(con, None, True)
     return param
 
 def get_lists_row(param, form):
@@ -25,7 +25,7 @@ def get_lists_row(param, form):
             rows = cur.fetchall()
     finally:
         if con:
-            db.putconn(con)
+            db.putconn(con, None, True)
     return rows
 
 def update_exports(fname, id):
@@ -39,4 +39,4 @@ def update_exports(fname, id):
         con.commit()
     finally:
         if con:
-            db.putconn(con)
+            db.putconn(con, None, True)
