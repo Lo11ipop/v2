@@ -35,10 +35,11 @@ def insert_exports(TypeReport, dateS, dateF):
 def row_ret_exports():
     con = None
     try:
-        con = psycopg2.connect("host = 'localhost' dbname ='sec' user='alt' password='1234'")
+        con = psycopg2.connect("host = {0} dbname ={1} user={2} password={3}".format(HOST, DBname, User, Password))
         cur = con.cursor()
         cur.execute("SELECT * FROM exports")
         rows = cur.fetchall()
+        print(rows)
     finally:
         if con:
             con.close()
