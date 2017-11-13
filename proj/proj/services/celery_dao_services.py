@@ -1,12 +1,16 @@
 from ..services import db
 from ..dao import celery_dao
+import datetime
 
 def get_last_exports(id):
     con = None
     try:
         con = db.getconn()
         cur = con.cursor()
-        param = celery_dao.get_last_exports(id, cur)
+        try:
+            param = celery_dao.get_last_exports(id[0], cur)
+        except ValueError:
+            param = celery_dao.get_last_exports(0, cur)
     finally:
         if con:
             cur.close()
@@ -19,10 +23,16 @@ def get_lists_row(param, form):
     try:
         con = db.getconn()
         cur = con.cursor()
-        if (form):
-            rows = celery_dao.get_lists_row_without_price(param, cur)
-        else:
-            rows = celery_dao.get_lists_row_with_price(param, cur)
+        try:
+            if (form):
+                rows = celery_dao.get_lists_row_without_price(param[0][1],param[0][2], cur)
+            else:
+                rows = celery_dao.get_lists_row_with_price(param[0][1],param[0][2], cur)
+        except TypeError:
+            if (form):
+                rows = celery_dao.get_lists_row_without_price(datetime.datetime.now()-datetime.timedelta(days=1),datetime.datetime.now()+datetime.timedelta(days=1), cur)
+            else:
+                rows = celery_dao.get_lists_row_with_price(datetime.datetime.now()-datetime.timedelta(days=1),datetime.datetime.now()+datetime.timedelta(days=1), cur)
     finally:
         if con:
             cur.close()
@@ -36,9 +46,9 @@ def update_exports(fname, id):
         con = db.getconn()
         cur = con.cursor()
         try:
-            celery_dao.update_exports(fname, id, cur)
+            celery_dao.update_exports(fname, id[0], cur)
             con.commit()
-        except:
+        except Exception:
             con.rollback()
     finally:
         if con:

@@ -24,7 +24,7 @@ def insert_exports(TypeReport, dateS, dateF):
             myid = view_dao.insert_exports(TypeReport, dateS, dateF, cur)
             con.commit()
             param = myid[0]
-        except:
+        except Exception:
             con.rollback()
     finally:
         if con:
