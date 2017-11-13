@@ -85,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="celery_dao_services.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="celery_dao_services.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proj/services/celery_dao_services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="48" lean-forward="false" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+            <state relative-caret-position="432">
+              <caret line="24" column="66" lean-forward="false" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -97,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_dao_services.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view_dao_services.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/proj/services/view_dao_services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+            <state relative-caret-position="144">
+              <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/proj/services/view_services.py" />
         <option value="$PROJECT_DIR$/proj/dao/celery_dao.py" />
         <option value="$PROJECT_DIR$/proj/dao/view_dao.py" />
-        <option value="$PROJECT_DIR$/proj/services/view_dao_services.py" />
         <option value="$PROJECT_DIR$/proj/services/celery_dao_services.py" />
+        <option value="$PROJECT_DIR$/proj/services/view_dao_services.py" />
       </list>
     </option>
   </component>
@@ -602,16 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proj/services/view_dao_services.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proj/dao/view_dao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -630,8 +620,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/proj/services/celery_dao_services.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="66" lean-forward="false" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proj/services/view_dao_services.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="48" lean-forward="false" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

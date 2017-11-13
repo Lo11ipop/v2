@@ -20,9 +20,12 @@ def insert_exports(TypeReport, dateS, dateF):
     try:
         con = db.getconn()
         cur = con.cursor()
-        myid = view_dao.insert_exports(TypeReport, dateS, dateF, cur)
-        con.commit()
-        param = myid[0]
+        try:
+            myid = view_dao.insert_exports(TypeReport, dateS, dateF, cur)
+            con.commit()
+            param = myid[0]
+        except:
+            con.rollback()
     finally:
         if con:
             cur.close()

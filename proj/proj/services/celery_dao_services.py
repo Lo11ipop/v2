@@ -35,8 +35,11 @@ def update_exports(fname, id):
     try:
         con = db.getconn()
         cur = con.cursor()
-        celery_dao.update_exports(fname, id, cur)
-        con.commit()
+        try:
+            celery_dao.update_exports(fname, id, cur)
+            con.commit()
+        except:
+            con.rollback()
     finally:
         if con:
             cur.close()
