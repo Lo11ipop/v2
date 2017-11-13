@@ -22,7 +22,6 @@ def get_list():
 
 def insert_export(TypeReport, dateS, dateF):
     con = None
-    param = 0
     try:
         con = db.getconn()
         cur = con.cursor()
@@ -32,7 +31,6 @@ def insert_export(TypeReport, dateS, dateF):
     except Exception as e:
         con.rollback()
         print(e)
-        crrfil.delay(param)
     finally:
         if con:
             cur.close()
