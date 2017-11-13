@@ -11,6 +11,8 @@ def get_list():
         con = db.getconn()
         cur = con.cursor()
         rows = view_dao.row_ret_lists(cur)
+    except Exception as e:
+        print(e)
     finally:
         if con:
             cur.close()
@@ -24,13 +26,13 @@ def insert_export(TypeReport, dateS, dateF):
     try:
         con = db.getconn()
         cur = con.cursor()
-        try:
-            myid = view_dao.insert_exports(TypeReport, dateS, dateF, cur)
-            con.commit()
-            crrfil.delay(myid[0])
-        except Exception:
-            con.rollback()
-            crrfil.delay(param)
+        myid = view_dao.insert_exports(cur, TypeReport, dateS, dateF)
+        con.commit()
+        crrfil.delay(myid[0])
+    except Exception as e:
+        con.rollback()
+        print(e)
+        crrfil.delay(param)
     finally:
         if con:
             cur.close()
@@ -43,6 +45,8 @@ def get_exports():
         con = db.getconn()
         cur = con.cursor()
         rows = view_dao.row_ret_exports(cur)
+    except Exception as e:
+        print(e)
     finally:
         if con:
             cur.close()
