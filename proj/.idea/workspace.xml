@@ -21,10 +21,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="celery_dao_services.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="celery_dao_services.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proj/services/celery_dao_services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="44">
               <caret line="34" column="160" lean-forward="false" selection-start-line="34" selection-start-column="160" selection-end-line="34" selection-end-column="160" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -41,6 +41,16 @@
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="celery_dao.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/proj/dao/celery_dao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="130" lean-forward="false" selection-start-line="5" selection-start-column="130" selection-end-line="5" selection-end-column="130" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,10 +85,10 @@
         <option value="$PROJECT_DIR$/proj/services/__init__.py" />
         <option value="$PROJECT_DIR$/proj/services/view_services.py" />
         <option value="$PROJECT_DIR$/proj/dao/view_dao.py" />
-        <option value="$PROJECT_DIR$/proj/dao/celery_dao.py" />
         <option value="$PROJECT_DIR$/proj/services/celery_services.py" />
         <option value="$PROJECT_DIR$/proj/services/view_dao_services.py" />
         <option value="$PROJECT_DIR$/proj/services/celery_dao_services.py" />
+        <option value="$PROJECT_DIR$/proj/dao/celery_dao.py" />
       </list>
     </option>
   </component>
@@ -508,14 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proj/dao/celery_dao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="88" lean-forward="false" selection-start-line="1" selection-start-column="88" selection-end-line="1" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proj/services/celery_services.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -529,7 +531,7 @@
         <state relative-caret-position="144">
           <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -544,6 +546,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/proj/services/celery_dao_services.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="34" column="160" lean-forward="false" selection-start-line="34" selection-start-column="160" selection-end-line="34" selection-end-column="160" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/proj/views/site.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -552,13 +564,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proj/services/celery_dao_services.py">
+    <entry file="file://$PROJECT_DIR$/proj/dao/celery_dao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="160" lean-forward="false" selection-start-line="34" selection-start-column="160" selection-end-line="34" selection-end-column="160" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="5" column="130" lean-forward="false" selection-start-line="5" selection-start-column="130" selection-end-line="5" selection-end-column="130" />
+          <folding />
         </state>
       </provider>
     </entry>
